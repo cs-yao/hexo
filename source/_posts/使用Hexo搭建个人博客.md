@@ -80,7 +80,7 @@ hexo将在source/_posts目录下新建一个新的md文件，作为你的文章�
 1. 安装插件
 
    ~~~shell
-   cnpm install hexo-asset-image --save
+   cnpm install https://github.com/CodeFalling/hexo-asset-image --save
    ~~~
 
 2. 修改配置
