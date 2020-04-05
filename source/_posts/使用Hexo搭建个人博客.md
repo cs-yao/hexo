@@ -1,6 +1,6 @@
 ---
 title: 使用Hexo搭建个人博客
-date: 2020-04-04 22:28:14
+date: 2020-04-01 10:28:14
 tags: hexo,github,gitee
 ---
 Markdown文件是很方便的笔记工具，但云笔记对其的支持都远不如Typora。而Hexo是使用markdown编辑博客.使用Hexo搭建个人博客，将编写的Markdow笔记以博客的形式发布到Github等上面。除了可以更方便的总结个人知识，还可以分享知识和展示自我。一举多得。
@@ -15,8 +15,7 @@ Markdown文件是很方便的笔记工具，但云笔记对其的支持都远不
 # 安装hexo，建议使用npm的阿里镜像来安装。
 # cnpm相当于npm --registry=https://registry.npm.taobao.org
 # $ npm install -g cnpm --registry=https://registry.npm.taobao.org 
-# $ cnpm install hexo-cli -g
-npm install hexo-cli -g
+npm install hexo-cli -g # 使用cnpm替换： cnpm install hexo-cli -g
 ~~~
 
 #### 初始化博客程序
@@ -67,6 +66,10 @@ hexo将在source/_posts目录下新建一个新的md文件，作为你的文章�
 
 ![image-20200404233438596](使用Hexo搭建个人博客/image-20200404233438596.png)
 
+#### 删除博客
+
+只需要删除文件即可。
+
 #### 文章图片
 
 如果使用本地图片作为博客图片的话，需要使用图片插件（或者使用hexo3以上的图片语法，typora不支持，pass）
@@ -88,10 +91,10 @@ hexo将在source/_posts目录下新建一个新的md文件，作为你的文章�
 
    ~~~shell
    # 新建一篇博客时，会同时新建同名的文件夹，博客中的图片需要使用该目录下的图片引用
-   hexo new "新的博客"
+   hexo new "新的文章"
    ~~~
 
-   <img src="使用Hexo搭建个人博客/image-20200405004520787.png" alt="image-20200405004520787" style="zoom:80%;" />
+   <img src="使用Hexo搭建个人博客/image-20200405080334167.png" alt="image-20200405080334167" style="zoom:80%;" />
 
    文章中添加图片
 
