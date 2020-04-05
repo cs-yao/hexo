@@ -1,13 +1,16 @@
 ---
 title: 使用Hexo搭建个人博客
 date: 2020-04-01 10:28:14
-tags: hexo,github,gitee
+tags: 
+ - hexo
+ - github
+ - gitee
 ---
 Markdown文件是很方便的笔记工具，但云笔记对其的支持都远不如Typora。而Hexo是使用markdown编辑博客.使用Hexo搭建个人博客，将编写的Markdow笔记以博客的形式发布到Github等上面。除了可以更方便的总结个人知识，还可以分享知识和展示自我。一举多得。
 
 [Hexo官网](https://hexo.io/zh-cn/docs/)
 
-#### 安装
+## 安装
 
 环境依赖nodejs和git。以下命令皆在Windows的PowerShell中运行。
 
@@ -18,7 +21,7 @@ Markdown文件是很方便的笔记工具，但云笔记对其的支持都远不
 npm install hexo-cli -g # 使用cnpm替换： cnpm install hexo-cli -g
 ~~~
 
-#### 初始化博客程序
+## 初始化博客程序
 
 ~~~shell
 # 在需要存放的目录执行以下命令，blog为自定义的目录
@@ -41,7 +44,7 @@ subtitle: ''
 description: ''
 keywords:
 author: cs-yao
-language: zh-cn
+language: zh-CN # CN大写，不然可能在某些主题中出现问题 
 timezone: ''
 ~~~
 
@@ -49,7 +52,7 @@ timezone: ''
 
 ![image-20200405002834945](使用Hexo搭建个人博客/image-20200405002834945.png)
 
-#### 新建博客
+## 新建博客
 
 尝试效果，先新建一个简单的博客看看。使用vscode打开博客目录（或者先博客目录新开一个powershell），在控制终端输入以下命令
 
@@ -66,11 +69,11 @@ hexo将在source/_posts目录下新建一个新的md文件，作为你的文章�
 
 ![image-20200404233438596](使用Hexo搭建个人博客/image-20200404233438596.png)
 
-#### 删除博客
+## 删除博客
 
 只需要删除文件即可。
 
-#### 文章图片
+## 文章图片
 
 如果使用本地图片作为博客图片的话，需要使用图片插件（或者使用hexo3以上的图片语法，typora不支持，pass）
 
@@ -112,15 +115,15 @@ hexo将在source/_posts目录下新建一个新的md文件，作为你的文章�
 
 基本操作如此，接下来就是发布到github了。
 
-#### 发布
+## 发布
 
-##### 新建仓库
+新建仓库
 
 在github上新建一个名为<user-name>.github.io的公共仓库，<user-name>就是你的用户名。
 
 ![image-20200405000853684](使用Hexo搭建个人博客/image-20200405000853684.png)
 
-##### 配置发布地址
+### 配置发布地址
 
 在博客根目录下的_config.yml文件中配置发布信息，如下
 
@@ -131,7 +134,7 @@ deploy:
   branch: master  #分支
 ~~~
 
-##### 安装git插件
+### 安装git插件
 
 发布到git需要git插件支持
 
@@ -139,7 +142,7 @@ deploy:
 cnpm install hexo-deployer-git --save
 ~~~
 
-##### 发布博客
+### 发布博客
 
 ~~~sell
 hexo clean
@@ -152,7 +155,7 @@ hexo deploy
 
 ![image-20200405002532239](使用Hexo搭建个人博客/image-20200405002532239.png)
 
-##### gitee
+### gitee
 
 码云（gitee.com）上也可同样的建立个人博客，只需要新增仓库名为<user-name>的仓库，然后将github上的博客仓库同步到该仓库即可，码云的个人博客地址是：<user-name>.gitee.io
 
