@@ -100,7 +100,7 @@ theme: next-7.7.2 #landscape,next-7.7.2
 deploy:
   type: git
   repo: git@github.com:cs-yao/cs-yao.github.io.git # 你的仓库地址
-  branch: master  #分支
+  branch: master  # 分支
 
 search:
   path: search.xml
