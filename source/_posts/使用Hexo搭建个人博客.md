@@ -1,6 +1,6 @@
 ---
 title: 使用Hexo搭建个人博客
-date: 2020-04-01 10:28:14
+date: 2020-04-04 10:28:14
 tags: 
  - hexo
  - github
@@ -15,10 +15,18 @@ Markdown文件是很方便的笔记工具，但云笔记对其的支持都远不
 环境依赖nodejs和git。以下命令皆在Windows的PowerShell中运行。
 
 ~~~shell
-# 安装hexo，建议使用npm的阿里镜像来安装。
-# cnpm相当于npm --registry=https://registry.npm.taobao.org
-# $ npm install -g cnpm --registry=https://registry.npm.taobao.org 
-npm install hexo-cli -g # 使用cnpm替换： cnpm install hexo-cli -g
+# 建议npm使用阿里的镜像
+npm config set registry https://registry.npm.taobao.org
+# 查看更换镜像
+npm config ls
+# 此时：metrics-registry = "http://registry.npm.taobao.org/"表示设置成功
+~~~
+
+全局安装hexo
+
+~~~shell
+# 安装hexo
+npm install hexo-cli -g
 ~~~
 
 ## 初始化博客程序
@@ -52,6 +60,8 @@ timezone: ''
 
 ![image-20200405002834945](使用Hexo搭建个人博客/image-20200405002834945.png)
 
+<!-- more -->
+
 ## 新建博客
 
 尝试效果，先新建一个简单的博客看看。使用vscode打开博客目录（或者先博客目录新开一个powershell），在控制终端输入以下命令
@@ -80,7 +90,7 @@ hexo将在source/_posts目录下新建一个新的md文件，作为你的文章�
 1. 安装插件
 
    ~~~shell
-   cnpm install https://github.com/CodeFalling/hexo-asset-image --save
+   npm install https://github.com/CodeFalling/hexo-asset-image --save
    ~~~
 
 2. 修改配置
@@ -107,11 +117,10 @@ hexo将在source/_posts目录下新建一个新的md文件，作为你的文章�
 
       ~~~shell
       # ctrl+c结束服务
-      INFO  Good bye
-      PS D:\github\blog> hexo server
+      hexo server # 或简写: hexo s
       ~~~
-
       
+
 
 基本操作如此，接下来就是发布到github了。
 
@@ -139,7 +148,7 @@ deploy:
 发布到git需要git插件支持
 
 ~~~shell
-cnpm install hexo-deployer-git --save
+npm install hexo-deployer-git --save
 ~~~
 
 ### 发布博客
@@ -161,4 +170,43 @@ hexo deploy
 
 
 
+## 域名
+
+1. 如果想用自己的域名来访问GithubPage，需要先腾讯云、阿里云等申请一个自己的域名。然后解析到自己的github个人博客上：
+
+![image-20200408104748558](使用Hexo搭建个人博客/image-20200408104748558.png)
+
+2. 在hexo项目的source目录下添加没有后缀名的”CNAME"文件，将自己的域名填入（我的域名是pal.pub）
+
+~~~txt source/cname
+pal.pub
+~~~
+
+3. 在主配置文件中修改域名地址：（非必须步骤）
+
+~~~yml _config.yml
+url: http://pal.pub
+~~~
+
+4. 将hexo发布
+
+~~~shell
+hexo s
+~~~
+
+4. 在github的博客仓库中设置，然后在 `GitHub Pages`的 `Custom domain`设置里填上该域名：
+
+![image-20200408105426379](使用Hexo搭建个人博客/image-20200408105426379.png)
+
+5. 查看效果
+
+![image-20200408105819983](使用Hexo搭建个人博客/image-20200408105819983.png)
+
+Gitee自定义域名需要付费，可以试用1个月，操作有些不一致，安装说明操作。
+
+
+
+
+
 以上，完成了博客的基本搭建，接下来会使用最受欢迎的next主题优化。
+

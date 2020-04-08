@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 解思垚
+title: 伙伴
 subtitle: 
 description: ''
 keywords:
-author: cs-yao
+author: Pal Pub
 language: zh-CN
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://cs-yao.github.io
+url: http://pal.pub
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
